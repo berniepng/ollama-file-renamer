@@ -3,6 +3,7 @@ import os
 import sys
 import json
 import requests
+from datetime import date
 from rich.console import Console
 from rich.table import Table
 from rich.prompt import Confirm
@@ -62,7 +63,8 @@ def main():
         console.print("[red]Usage:[/red] python renamer.py \"your rename instruction\" [/path/to/folder]")
         sys.exit(1)
 
-    prompt = sys.argv[1]
+    today = date.today().strftime("%Y-%m-%d")
+    prompt = sys.argv[1].replace("today's date", today).replace("today", today)
     folder = sys.argv[2] if len(sys.argv) > 2 else "."
     folder = os.path.abspath(folder)
 

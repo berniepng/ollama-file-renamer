@@ -34,8 +34,8 @@ The tool reads your folder, sends the file list + your instruction to a local LL
 **1. Clone the repo**
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ai-file-renamer.git
-cd ai-file-renamer
+git clone https://github.com/berniepng/ollama-file-renamer
+cd ollama-file-renamer
 ```
 
 **2. Create a virtual environment and install dependencies**
@@ -107,13 +107,13 @@ MODEL = "gemma3:27b"
 
 ### Model Recommendations
 
-| Model | Speed | JSON Reliability | Notes |
-|---|---|---|---|
-| `gemma4:e2b` | Fast | Good | Lightweight, works well for simple renames |
-| `gemma3:27b` | Medium | Very good | Better for complex or ambiguous instructions |
-| `qwen2.5:14b` | Medium | Very good | Strong structured output |
-| `llama3.2` | Fast | Moderate | May occasionally add extra text |
-| `mistral` | Fast | Moderate | Good general option |
+| Model         | Speed  | JSON Reliability | Notes                                        |
+| ------------- | ------ | ---------------- | -------------------------------------------- |
+| `gemma4:e2b`  | Fast   | Good             | Lightweight, works well for simple renames   |
+| `gemma3:27b`  | Medium | Very good        | Better for complex or ambiguous instructions |
+| `qwen2.5:14b` | Medium | Very good        | Strong structured output                     |
+| `llama3.2`    | Fast   | Moderate         | May occasionally add extra text              |
+| `mistral`     | Fast   | Moderate         | Good general option                          |
 
 > **Note:** Smaller models (1–3B parameters) may occasionally return malformed JSON. If you see parse errors, try a larger model or see the Troubleshooting section below.
 
@@ -155,6 +155,7 @@ The tool talks to Ollama at `http://localhost:11434` — the default local addre
 **`Connection error` or `Ollama not found`**
 
 Make sure Ollama is running:
+
 ```bash
 ollama serve
 ```
@@ -162,6 +163,7 @@ ollama serve
 **`Model returned invalid JSON`**
 
 The LLM didn't follow the structured output format. Try:
+
 - Using a larger or more capable model
 - Adding more specific language to your prompt
 - Running the command again (LLM outputs can vary)

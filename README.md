@@ -79,6 +79,8 @@ python renamer.py "replace all spaces with hyphens and lowercase everything"
 
 The tool will always show you a **preview table** before making any changes and ask for your confirmation. Nothing is renamed without a `y` from you.
 
+[[_img/terminal-screenshot.png]]
+
 ---
 
 ## Changing the Model

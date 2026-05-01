@@ -6,6 +6,8 @@ No cloud. No API keys. No data leaving your machine.
 
 ---
 
+![Ollama File Renamer Cover Art](_img/ollama-file-renamer-art.png)
+
 ## What It Does
 
 Instead of remembering bash commands or regex syntax, you just describe what you want:

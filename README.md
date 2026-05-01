@@ -1,4 +1,4 @@
-# 🗂️ AI File Renamer
+# 🗂️ Ollama File Renamer
 
 A local, privacy-first CLI tool that lets you rename files using plain English — powered by [Ollama](https://ollama.com) and any LLM you have running locally.
 

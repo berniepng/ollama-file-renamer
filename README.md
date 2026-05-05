@@ -182,6 +182,20 @@ Run `ollama list` to confirm the model name, then update the `MODEL` variable in
 
 ---
 
+## Security & Scope
+
+**Can this tool delete files?**
+
+No. The script only ever calls `os.rename()`. There is no delete, remove, or destructive operation anywhere in the code. Even if you instruct the model to "delete all files", the worst it can do is return a rename plan — and you'd see that in the preview table before confirming.
+
+The model's output is constrained to a JSON array of `{"old": "...", "new": "..."}` pairs. The code acts only on that structure.
+
+**Your real protection is the confirmation step, not the model.**
+
+System prompts can be imperfect and model behaviour can vary. The preview table and `y/n` prompt before every execution is the actual safety net. Nothing is renamed without your explicit confirmation.
+
+---
+
 ## Limitations
 
 - Processes files in a single directory only (no recursive folder traversal yet)
